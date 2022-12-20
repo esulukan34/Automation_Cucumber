@@ -1,6 +1,6 @@
 package utilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -36,19 +36,19 @@ public class Driver {
         if (driver == null) {
             String browser = ConfigReader.getProperty("browser");
             if ("chrome".equals(browser)) {
-                WebDriverManager.chromedriver().setup();
+
                 driver = new ChromeDriver();
             } else if ("firefox".equals(browser)) {
-                WebDriverManager.firefoxdriver().setup();
+
                 driver = new FirefoxDriver();
             } else if ("ie".equals(browser)) {
-                WebDriverManager.iedriver().setup();
+
                 driver = new InternetExplorerDriver();
             } else if ("safari".equals(browser)) {
-                WebDriverManager.getInstance(SafariDriver.class).setup();
+
                 driver = new SafariDriver();
             } else if ("chrome-headless".equals(browser)) {
-                WebDriverManager.chromedriver().setup();
+
                 driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
             }
         }
@@ -294,8 +294,8 @@ public class Driver {
         objSelect.selectByIndex(index);
     }
     //    Parameter1 : WebElement
-//    Parameter2:  String
-//    Driver.selectByIndex(dropdown element, "91303")
+    //    Parameter2:  String
+    //    Driver.selectByIndex(dropdown element, "91303")
     public static void selectByValue(WebElement element, String value) {
         Select objSelect = new Select(element);
         List<WebElement> elementCount = objSelect.getOptions();
@@ -314,4 +314,16 @@ public class Driver {
     public static void waitAndClickLocationText(WebElement element, String value) {
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
     }
+    //Auto gun ay yil secim
+    public static void selectDropDown(WebElement element){
+
+        List<WebElement> list = ReusableMethods.select(element).getOptions();
+        int index = ReusableMethods.random().nextInt(list.size());
+        while (index == 0){
+            index = ReusableMethods.random().nextInt(list.size());
+        }
+        ReusableMethods.select(element).selectByIndex(index);
+    }
+
+
 }
