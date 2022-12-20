@@ -250,65 +250,6 @@ public class ReusableMethods {
         tarih = date.format(formater);
         return tarih;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public static String setTheDateByRandom (String format,int atMostYear, String direction)
     {
         int day = (int) (Math.random() * 366 + 1);
@@ -331,5 +272,16 @@ public class ReusableMethods {
                 dateF = formatter.format(date);
                 return dateF;
         }
+    }
+
+    //Auto gun ay yil secim
+    public static void selectDropDown(WebElement element){
+
+        List<WebElement> list = ReusableMethods.select(element).getOptions();
+        int index = ReusableMethods.random().nextInt(list.size());
+        while (index == 0){
+            index = ReusableMethods.random().nextInt(list.size());
+        }
+        ReusableMethods.select(element).selectByIndex(index);
     }
 }

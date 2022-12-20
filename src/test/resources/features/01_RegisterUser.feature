@@ -16,7 +16,7 @@ Feature:
     *     Kullanici Create Account button'na tıklar
     *     Kullanici ACCOUNT CREATED! görünür
     *     Kullanici Continue butonuna basar
-    *     Kullanici Logged in as username
+    *     Kullanici Logged in as username gorunur oldugunu dogrular
     *     Kullanici Delete Account butonuna basar
     And   Kullanici ACCOUNT DELETED! gorunur oldugunu dogrular ve Continue buttonuna basar
 

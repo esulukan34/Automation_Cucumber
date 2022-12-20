@@ -31,6 +31,47 @@ public class AutomationPage {
     @FindBy(css = "#id_gender1")
     public WebElement mr;
 
+    @FindBy(css = "#days")
+    public WebElement day;
+
+    @FindBy(css = "#months")
+    public WebElement month;
+
+    @FindBy(css = "#years")
+    public WebElement year;
+
+    @FindBy(css = "#newsletter")
+    public WebElement newslatter;
+
+    @FindBy(css = "#optin")
+    public WebElement partners;
+
+    @FindBy(css = "#first_name")
+    public WebElement firstname;
+
+    @FindBy(css = "#country")
+    public WebElement country;
+
+    @FindBy(css = "#state")
+    public WebElement state;
+
+    @FindBy(xpath = "//*[text()='Create Account']")
+    public WebElement createAccount;
+
+    @FindBy(xpath = "//*[text()='Account Created!']")
+    public WebElement accountCreate;
+
+    @FindBy(css = ".btn.btn-primary")
+    public WebElement continueButton;
+
+    @FindBy(xpath = "//*[text()=' Logged in as ']")
+    public WebElement logged;
+
+    @FindBy(xpath = "//*[text()=' Delete Account']")
+    public WebElement delete;
+
+    @FindBy(xpath = "//*[text()='Account Deleted!']")
+    public WebElement accountDelete;
 
 
 }
