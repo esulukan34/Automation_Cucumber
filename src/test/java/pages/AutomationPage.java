@@ -5,11 +5,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class AutomationPage {
 
-    public AutomationPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public AutomationPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
+
+    //Tc001
     @FindBy(css = ".fa.fa-home")
     public WebElement home;
 
@@ -73,5 +77,40 @@ public class AutomationPage {
     @FindBy(xpath = "//*[text()='Account Deleted!']")
     public WebElement accountDelete;
 
+    //TC002
+    @FindBy(xpath = "//h2[.='Login to your account']")
+    public WebElement loginToYourAccountText;
+    @FindBy(xpath = "//input[@data-qa='login-email']")
+    public WebElement emailBoxLogin;
+    @FindBy(xpath = "//input[@data-qa='login-password']")
+    public WebElement passwordBoxLogin;
+    @FindBy(xpath = "//button[@data-qa='login-button']")
+    public WebElement loginButton;
+    @FindBy(xpath = "//*[.='Account Deleted!']//b")
+    public WebElement accountDeletedText;
+    @FindBy(xpath = "//p[.='Your email or password is incorrect!']")
+    public WebElement yourEmailOrPasswordIsIncorrect;
 
+    @FindBy(xpath = "//a[@href='/login']")
+    public WebElement signupLoginLink;
+    @FindBy(name = "name")
+    public WebElement nameBoxSignup;
+    @FindBy(xpath = "//input[@data-qa='signup-email']")
+    public WebElement emailBoxSignup;
+    @FindBy(xpath = "//button[@data-qa='signup-button']")
+    public WebElement signupButton;
+    @FindBy(css = ".radio-inline")
+    public List<WebElement> genderList;
+    @FindBy(css = "#password")
+    public WebElement passwordBoxNewSignup;
+    @FindBy(css = "#days")
+    public WebElement dayDDM;
+    @FindBy(css = "#months")
+    public WebElement monthDDM;
+    @FindBy(css = "#years")
+    public WebElement yearDDM;
+    @FindBy(id = "newsletter")
+    public WebElement newsletter;
+    @FindBy(css = "button[data-qa='create-account']")
+    public WebElement createAccountButton;
 }
