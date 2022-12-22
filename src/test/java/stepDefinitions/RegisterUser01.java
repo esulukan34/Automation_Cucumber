@@ -119,6 +119,7 @@ public class RegisterUser01 {
     }
     @Then("Kullanici Logged in as username gorunur oldugunu dogrular")
     public void kullanici_logged_in_as_username() {
+        Driver.getDriver().navigate().refresh();
         auto.logged.isDisplayed();
 
     }
