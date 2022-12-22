@@ -4,10 +4,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.AutomationPage;
-import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class LoginUserCorrect {
+public class T02_LoginUserCorrect {
 
     AutomationPage page = new AutomationPage();
     @Then("Kullanici Login to your account'un gorunur oldugunu dogrular")
