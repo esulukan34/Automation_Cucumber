@@ -113,4 +113,18 @@ public class AutomationPage {
     public WebElement newsletter;
     @FindBy(css = "button[data-qa='create-account']")
     public WebElement createAccountButton;
+
+
+    //TC04
+    @FindBy(css = ".fa.fa-user")
+    public WebElement loggedInAsUsername;
+
+    @FindBy (xpath = "//a[@href='/logout']")
+    public WebElement logoutButton;
+
+    //TC05
+
+    @FindBy (xpath = "//*[text()='Email Address already exist!']")
+    public WebElement emailAlreadyExistText;
+    
 }

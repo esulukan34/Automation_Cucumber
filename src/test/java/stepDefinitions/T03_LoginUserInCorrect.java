@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.AutomationPage;
 
-public class LoginUserInCorrect {
+public class T03_LoginUserInCorrect {
 
     AutomationPage page = new AutomationPage();
     @Then("Kullanici Yanlis e-posta adresini ve şifreyi girer")
