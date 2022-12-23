@@ -119,12 +119,52 @@ public class AutomationPage {
     @FindBy(css = ".fa.fa-user")
     public WebElement loggedInAsUsername;
 
-    @FindBy (xpath = "//a[@href='/logout']")
+    @FindBy(xpath = "//a[@href='/logout']")
     public WebElement logoutButton;
 
     //TC05
 
-    @FindBy (xpath = "//*[text()='Email Address already exist!']")
+    @FindBy(xpath = "//*[text()='Email Address already exist!']")
     public WebElement emailAlreadyExistText;
-    
+
+
+    //06
+    @FindBy(css = ".fa.fa-envelope")
+    public WebElement contactUs;
+
+    @FindBy(xpath = "//*[.='Get In Touch']")
+    public WebElement getInTouchTitle;
+
+    @FindBy(xpath = "//input[@name='name']")
+    public WebElement nameBoxContact;
+
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement emailBoxContact;
+
+    @FindBy(xpath = "//input[@name='subject']")
+    public WebElement subjectBoxContact;
+
+    @FindBy(xpath = "//textarea[@name='message']")
+    public WebElement messageBoxContact;
+
+    @FindBy(xpath = "//input[@name='upload_file']")
+    public WebElement uploadFile;
+
+    @FindBy(css = ".btn.btn-primary.pull-left.submit_form")
+    public WebElement submitContact;
+
+    @FindBy(css = ".status.alert.alert-success")
+    public WebElement successMessage;
+
+    @FindBy(css = ".btn.btn-success")
+    public WebElement homeButtonContact;
+
+    @FindBy(css = ".fa.fa-list")
+    public WebElement testCasesButton;
+
+
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement testCasesTitle;
+
+
 }
