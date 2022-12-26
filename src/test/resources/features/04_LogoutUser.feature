@@ -11,4 +11,4 @@
       Then Kullanici login button'una tiklar
       Then Kullanici Logged in as username gorunur oldugunu dogrular
       Then Kullanici Logout button'una tıklar
-      And Kullanici LoginPage'de oldugunu dogrular
+      And  Kullanici LoginPage'de oldugunu dogrular
