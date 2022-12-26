@@ -4,8 +4,8 @@ package utilities;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -32,30 +32,28 @@ public class Driver {
 
     //to initialize the driver we create a static method
     public static WebDriver getDriver() {
-        //create the driver if and only if it is null
         if (driver == null) {
-            String browser = ConfigReader.getProperty("browser");
-            if ("chrome".equals(browser)) {
-
-                driver = new ChromeDriver();
-            } else if ("firefox".equals(browser)) {
-
-                driver = new FirefoxDriver();
-            } else if ("ie".equals(browser)) {
-
-                driver = new InternetExplorerDriver();
-            } else if ("safari".equals(browser)) {
-
-                driver = new SafariDriver();
-            } else if ("chrome-headless".equals(browser)) {
-
-                driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+            switch (ConfigReader.getProperty("browser")) {
+                case "chrome":
+                    driver = new ChromeDriver();
+                    break;
+                case "edge":
+                    driver = new EdgeDriver();
+                    break;
+                case "firefox":
+                    driver = new FirefoxDriver();
+                    break;
+                case "safari":
+                    driver = new SafariDriver();
+                    break;
+                default:
+                    driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
             }
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
         return driver;
-    }
+    } //
 
     public static void closeDriver() {
         if (driver != null) {//if the driver is pointing chrome
@@ -280,15 +278,15 @@ public class Driver {
     }
 
     //    Parameter1 : WebElement
-//    Parameter2:  String
-//    Driver.selectByVisibleText(dropdown element, "CHECKING-91303-116.98$")
+    //    Parameter2:  String
+    //    Driver.selectByVisibleText(dropdown element, "CHECKING-91303-116.98$")
     public static void selectByVisibleText(WebElement element, String text) {
         Select objSelect = new Select(element);
         objSelect.selectByVisibleText(text);
     }
     //    Parameter1 : WebElement
-//    Parameter2:  int
-//    Driver.selectByIndex(dropdown element, 1)
+    //    Parameter2:  int
+    //    Driver.selectByIndex(dropdown element, 1)
     public static void selectByIndex(WebElement element, int index) {
         Select objSelect = new Select(element);
         objSelect.selectByIndex(index);
