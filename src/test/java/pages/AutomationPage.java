@@ -128,6 +128,7 @@ public class AutomationPage {
     public WebElement emailAlreadyExistText;
 
 
+<<<<<<< Updated upstream
     //06
     @FindBy(css = ".fa.fa-envelope")
     public WebElement contactUs;
@@ -165,6 +166,89 @@ public class AutomationPage {
 
     @FindBy(xpath = "//h2[@class='title text-center']")
     public WebElement testCasesTitle;
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // TC_008
+    @FindBy(css = ".nav.navbar-nav>:nth-child(2)")
+    public WebElement productsButton;
+    @FindBy(css = ".features_items")
+    public WebElement allProductPage;
+    @FindBy(xpath = "//div[@class='productinfo text-center']")
+    public List<WebElement> allProductsList;
+    @FindBy(css = "a>.fa.fa-plus-square")
+    public List<WebElement> viewProductList;
+    @FindBy(css = ".product-information")
+    public WebElement productInformation;
+    @FindBy(css = ".product-information")
+    public WebElement productInformationScreenshot;
+    @FindBy(css = ".product-information>h2")
+    public WebElement productName;
+    @FindBy(xpath = "(//*[@class='product-information']//p)[1]")
+    public WebElement productCategory;
+    @FindBy(xpath = "//div//span//span")
+    public WebElement productPrice;
+    @FindBy(xpath = "(//*[@class='product-information']//p)[2]")
+    public WebElement productAvailability;
+    @FindBy(xpath = "(//*[@class='product-information']//p)[3]")
+    public WebElement productCondition;
+    @FindBy(xpath = "(//*[@class='product-information']//p)[4]")
+    public WebElement productBrand;
+
+    @FindBy(xpath = "//*[@class='features_items']//*[@class='col-sm-4']/div/div/div/p")
+    public List<WebElement> allProduct;  //css ->    .features_items>.col-sm-4>div>div>div>p
+
+    //TC009
+    @FindBy(css = "input#search_product")
+    public WebElement searchProduct;
+    @FindBy(xpath = "//*[@id='submit_search']")
+    public WebElement searchButton;
+    @FindBy(css = ".title.text-center")
+    public WebElement searchedProducts;
+    @FindBy(xpath = "//*[@class='productinfo text-center']/p")
+    public List<WebElement> searchedProductNames;
+    @FindBy(xpath = "//*[@class='features_items']")
+    public WebElement wantedProduct;
+
+
+>>>>>>> Stashed changes
 
 
 }
