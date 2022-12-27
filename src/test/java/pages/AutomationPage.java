@@ -162,11 +162,8 @@ public class AutomationPage {
 
     @FindBy(css = ".fa.fa-list")
     public WebElement testCasesButton;
-
-
     @FindBy(xpath = "//h2[@class='title text-center']")
     public WebElement testCasesTitle;
-
 
     // TC_008
     @FindBy(css = ".nav.navbar-nav>:nth-child(2)")
