@@ -162,8 +162,6 @@ public class AutomationPage {
 
     @FindBy(css = ".fa.fa-list")
     public WebElement testCasesButton;
-
-
     @FindBy(xpath = "//h2[@class='title text-center']")
     public WebElement testCasesTitle;
 =======
@@ -205,6 +203,7 @@ public class AutomationPage {
 
 
 
+>>>>>>> Stashed changes
 
     // TC_008
     @FindBy(css = ".nav.navbar-nav>:nth-child(2)")
@@ -248,7 +247,9 @@ public class AutomationPage {
     public WebElement wantedProduct;
 
 
+
+<<<<<<< Updated upstream
+=======
+
 >>>>>>> Stashed changes
-
-
 }
