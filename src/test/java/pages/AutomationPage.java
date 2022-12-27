@@ -207,4 +207,60 @@ public class AutomationPage {
     public WebElement wantedProduct;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //TC10-11
+    @FindBy(xpath = "//h2[text()='Subscription']")
+    public WebElement subscriptionTitle;
+
+    @FindBy(xpath = "//*[@id='susbscribe_email']")
+    public WebElement subscriptionEmailBox;
+
+    @FindBy(xpath = "//*[@class='fa fa-arrow-circle-o-right']")
+    public WebElement subscriptionOkButton;
+
+    @FindBy(xpath = "//*[@class='alert-success alert']")
+    public WebElement successMessageAlert;
+
+    @FindBy(xpath = "//*[@class='fa fa-shopping-cart']")
+    public WebElement cartButton;
+
 }
