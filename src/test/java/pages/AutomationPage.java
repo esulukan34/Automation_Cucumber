@@ -206,47 +206,6 @@ public class AutomationPage {
     @FindBy(xpath = "//*[@class='features_items']")
     public WebElement wantedProduct;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //TC10-11
     @FindBy(xpath = "//h2[text()='Subscription']")
     public WebElement subscriptionTitle;

@@ -1,7 +1,6 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.And;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import pages.AutomationPage;
 import utilities.Driver;
@@ -11,7 +10,7 @@ import java.io.IOException;
 
 import static org.junit.Assert.assertTrue;
 
-public class TC09_SearchProduct {
+public class T09_SearchProduct {
     AutomationPage page = new AutomationPage();
     @And("Kullanici arama box ina urun adini girer ve ara dugmesine tiklar")
     public void kullaniciAramaBoxInaUrunAdiniGirerVeAraDugmesineTiklar() {

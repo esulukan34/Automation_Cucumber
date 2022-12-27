@@ -10,7 +10,7 @@ import utilities.ReusableMethods;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class T6_ContantUsForm {
+public class T06_ContantUsForm {
 
     AutomationPage page = new AutomationPage();
     @Then("Kullanici Contact Us butonuna tıklar")

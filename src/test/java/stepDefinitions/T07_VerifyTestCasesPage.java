@@ -4,12 +4,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.AutomationPage;
-import utilities.Driver;
-import utilities.ReusableMethods;
 
 import static org.junit.Assert.assertEquals;
 
-public class T7_VerifyTestCasesPage {
+public class T07_VerifyTestCasesPage {
 
     AutomationPage page = new AutomationPage();
     @Then("Kullanici Test Cases butonuna tiklar")
