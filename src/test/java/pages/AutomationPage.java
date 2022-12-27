@@ -223,5 +223,6 @@ public class AutomationPage {
     @FindBy(xpath = "//*[@class='fa fa-shopping-cart']")
     public WebElement cartButton;
 
-
+    @FindBy(css = "#first_name")
+    public WebElement firstnameBoxNewSignup;
 }
