@@ -128,7 +128,7 @@ public class AutomationPage {
     public WebElement emailAlreadyExistText;
 
 
-<<<<<<< Updated upstream
+
     //06
     @FindBy(css = ".fa.fa-envelope")
     public WebElement contactUs;
@@ -166,44 +166,6 @@ public class AutomationPage {
 
     @FindBy(xpath = "//h2[@class='title text-center']")
     public WebElement testCasesTitle;
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     // TC_008
@@ -246,9 +208,6 @@ public class AutomationPage {
     public List<WebElement> searchedProductNames;
     @FindBy(xpath = "//*[@class='features_items']")
     public WebElement wantedProduct;
-
-
->>>>>>> Stashed changes
 
 
 }
