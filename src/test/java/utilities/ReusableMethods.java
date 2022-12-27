@@ -284,4 +284,13 @@ public class ReusableMethods {
         }
         ReusableMethods.select(element).selectByIndex(index);
     }
+
+    public static void selectDdmIndex(WebElement element) {
+
+        List<WebElement> list = select(element).getOptions();
+
+        int index = random().nextInt(list.size());
+
+        select(element).selectByIndex(index);
+    }
 }
