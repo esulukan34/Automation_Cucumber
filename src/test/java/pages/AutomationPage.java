@@ -128,7 +128,6 @@ public class AutomationPage {
     public WebElement emailAlreadyExistText;
 
 
-
     //06
     @FindBy(css = ".fa.fa-envelope")
     public WebElement contactUs;
@@ -164,6 +163,7 @@ public class AutomationPage {
     public WebElement testCasesButton;
     @FindBy(xpath = "//h2[@class='title text-center']")
     public WebElement testCasesTitle;
+
 
     // TC_008
     @FindBy(css = ".nav.navbar-nav>:nth-child(2)")
@@ -210,6 +210,7 @@ public class AutomationPage {
     @FindBy(xpath = "//h2[text()='Subscription']")
     public WebElement subscriptionTitle;
 
+
     @FindBy(xpath = "//*[@id='susbscribe_email']")
     public WebElement subscriptionEmailBox;
 
@@ -221,5 +222,6 @@ public class AutomationPage {
 
     @FindBy(xpath = "//*[@class='fa fa-shopping-cart']")
     public WebElement cartButton;
+
 
 }
