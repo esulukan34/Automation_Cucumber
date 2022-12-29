@@ -285,6 +285,7 @@ public class ReusableMethods {
         ReusableMethods.select(element).selectByIndex(index);
     }
 
+
     public static void selectDdmIndex(WebElement element) {
 
         List<WebElement> list = select(element).getOptions();
@@ -292,5 +293,22 @@ public class ReusableMethods {
         int index = random().nextInt(list.size());
 
         select(element).selectByIndex(index);
+    }
+
+    public static String dateMonth() {
+
+        String month;
+        LocalDateTime dateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM");
+        return month = dateTime.format(formatter);
+    }
+
+    public static String dateYear() {
+
+        String year;
+        LocalDateTime localDateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy");
+        return year = localDateTime.format(formatter);
+
     }
 }
