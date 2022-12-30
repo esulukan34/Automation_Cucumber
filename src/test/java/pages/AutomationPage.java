@@ -333,5 +333,34 @@ public class AutomationPage {
     @FindBy(xpath = "//*[text()='Shopping Cart']")
     public WebElement shoppingCart;
 
+    //TC16-17
+    @FindBy(xpath = "//*[text()='View Cart']")
+    public WebElement WiewCart;
+
+    @FindBy(xpath = "//*[text()='Proceed To Checkout']")
+    public WebElement ProceedToCheckout;
+
+    @FindBy(xpath = "//*[text()='Address Details']")
+    public WebElement addressDetails;
+
+    @FindBy(xpath = "//*[@class='form-control']")
+    public WebElement orderButton;
+
+    @FindBy(xpath = "//*[@class='cart_quantity_delete']")
+    public WebElement deletesTheProduct;
+
+    @FindBy(xpath = "//*[text()='Cart is empty!']")
+    public WebElement cartEmpty;
+
+
+
+
+
+
+
+
+
+
+
 
 }
