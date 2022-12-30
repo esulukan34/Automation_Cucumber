@@ -23,6 +23,7 @@ public class T09_SearchProduct {
 
     @And("Kullanici ARARAN URUNLER in gorunur oldugunu dogrular")
     public void kullaniciARARANURUNLERInGorunurOldugunuDogrular() {
+
         assertTrue(page.searchedProducts.isDisplayed());
     }
 
