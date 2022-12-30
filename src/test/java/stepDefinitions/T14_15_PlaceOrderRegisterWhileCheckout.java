@@ -10,7 +10,7 @@ import pages.AutomationPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class T14_PlaceOrderRegisterWhileCheckout {
+public class T14_15_PlaceOrderRegisterWhileCheckout {
 
 
     AutomationPage page = new AutomationPage();
