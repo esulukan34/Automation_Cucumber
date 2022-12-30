@@ -23,7 +23,7 @@ public class Hooks {
         if (scenario.isFailed()) {
             scenario.attach(screenshot, "image/png", "screenshots");
         }
-      //  Driver.closeDriver();
+        //  Driver.closeDriver();
     }
 
     AutomationPage page = new AutomationPage();
@@ -72,6 +72,6 @@ public class Hooks {
                 .sendKeys(Faker.instance().phoneNumber().cellPhone()).perform();
         jsScrollClick(page.createAccountButton);
 
-      //  Driver.closeDriver();
+        Driver.closeDriver();
     }
 }
