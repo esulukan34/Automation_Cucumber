@@ -352,6 +352,36 @@ public class AutomationPage {
     @FindBy(xpath = "//*[text()='Cart is empty!']")
     public WebElement cartEmpty;
 
+    //TC 18-19
+    @FindBy(xpath = "//h2[text()='Category']")
+    public WebElement category;
+
+    @FindBy(xpath = "(//h4/a[@data-toggle ='collapse'])[1]")
+    public WebElement women;
+
+    @FindBy(xpath = "(//div[@class='panel-body']/ul/li/a)[1]")
+    public WebElement dress;
+
+    @FindBy(xpath = "//*[@class='active']")
+    public WebElement active;
+    @FindBy(xpath = "//h2[text()='Women - Dress Products']")
+    public WebElement womenTopProducts;
+    @FindBy(xpath = "(//h4/a[@data-toggle ='collapse'])[2]")
+    public WebElement men;
+    @FindBy(xpath = "(//div[@class='panel-body']/ul/li/a)[4]")
+    public WebElement tshirt;
+    @FindBy(xpath = "//div[@class='brands-name']/ul/li")
+    public List<WebElement> brandsName;
+    @FindBy(xpath = "//*[text()='Polo']")
+    public WebElement polo;
+    @FindBy(xpath = "//h2[text()='Brand - Polo Products']")
+    public WebElement brandPoloProducts;
+    @FindBy(xpath = "//*[text()='H&M']")
+    public WebElement hm;
+    @FindBy(css = ".title.text-center")
+    public WebElement brandHMProducts;
+
+
 
 
 
