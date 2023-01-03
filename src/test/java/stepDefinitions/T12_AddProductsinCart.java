@@ -7,6 +7,7 @@ import pages.AutomationPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
@@ -52,7 +53,7 @@ public class T12_AddProductsinCart {
     public void kullanici_her_iki_ürünün_de_sepete_eklendigini_dogrular() {
 
         int productListSize = page.productsList.size();
-        assertTrue(productListSize == 2);
+        assertEquals(2, productListSize);
     }
 
 
