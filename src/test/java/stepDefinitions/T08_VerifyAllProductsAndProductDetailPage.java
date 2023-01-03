@@ -22,6 +22,8 @@ public class T08_VerifyAllProductsAndProductDetailPage {
     @Then("Kullanicinin TUM URUNLER sayfasina basariyla gittigini doğrular")
     public void kullanicininTUMURUNLERSayfasinaBasariylaGittiginiDoğrular() {
         assertTrue(page.allProductPage.isDisplayed());
+        Driver.getDriver().navigate().refresh();
+        page.productsButton.click();
     }
 
     @Then("Kullanici Urun listesi görünür oldugunu dogrular")

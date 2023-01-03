@@ -381,7 +381,17 @@ public class AutomationPage {
     @FindBy(css = ".title.text-center")
     public WebElement brandHMProducts;
 
-
+    //TC 20
+    @FindBy(css = ".features_items>.col-sm-4>div>div>div>p")
+    public List<WebElement> allProductNameList;
+    @FindBy(xpath = "//h2[.='Searched Products']")
+    public WebElement searchedProductsTitle;
+    @FindBy(xpath = "//div[@class='single-products']//*[@class='productinfo text-center']/a")
+    public List<WebElement> addToCartLinkListSearchedProducts;
+    @FindBy(xpath = "//tr/td[2]/h4")
+    public List<WebElement> shoppingCartProductNamesList;
+    @FindBy(xpath = "//*[@class='cart_delete']/a")
+    public List<WebElement> cartDeleteXList;
 
 
 
