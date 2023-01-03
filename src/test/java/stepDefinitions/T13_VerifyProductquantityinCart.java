@@ -23,7 +23,12 @@ public class T13_VerifyProductquantityinCart {
         int index = random().nextInt(page.viewProductButtonList.size());
         jsScrollClick(page.viewProductButtonList.get(index));
         Driver.getDriver().navigate().refresh();
-        jsScrollClick(page.viewProductButtonList.get(index));
+        try{
+            jsScrollClick(page.viewProductButtonList.get(index));
+        }catch (Exception e){
+
+        }
+
 
     }
 

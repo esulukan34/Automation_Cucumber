@@ -394,13 +394,25 @@ public class AutomationPage {
     public List<WebElement> cartDeleteXList;
 
 
+    // T21
 
+    @FindBy(xpath = "//*[text()='Write Your Review']")
+    public WebElement writeYourReviewText;
 
+    @FindBy(id = "name")
+    public WebElement productDetailsName;
 
+    @FindBy(id = "email")
+    public WebElement productDetailsEmail;
 
+    @FindBy(id = "review")
+    public WebElement productDetailsReview;
 
+    @FindBy(id = "button-review")
+    public WebElement productDetailsButtonReview;
 
-
+    @FindBy(xpath = "//*[text()='Thank you for your review.']")
+    public WebElement thankYouForYourReview;
 
 
 }
