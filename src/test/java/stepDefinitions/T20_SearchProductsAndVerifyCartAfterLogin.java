@@ -41,7 +41,6 @@ public class T20_SearchProductsAndVerifyCartAfterLogin {
     @Then("Kullanici urunleri sepete ekler")
     public void kullaniciUrunleriSepeteEkler() {
 
-
         //jsScrollClick(page.addToCartLinkListSearchedProducts.get(0));
         //waitFor(3);
         expectedSize = page.addToCartLinkListSearchedProducts.size(); //
@@ -103,6 +102,7 @@ public class T20_SearchProductsAndVerifyCartAfterLogin {
 
             jsScroll(page.shoppingCartProductNamesList.get(i));
         }
+
 
         // delete product
         while (page.cartDeleteXList.size() != 0) {
