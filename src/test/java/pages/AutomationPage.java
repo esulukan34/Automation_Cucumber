@@ -416,6 +416,16 @@ public class AutomationPage {
     public WebElement thankYouForYourReview;
 
 
+    //TC25
+
+
+    @FindBy(css = "#scrollUp")
+    public WebElement scrollUp;
+
+    @FindBy(xpath = "//h2[.='Full-Fledged practice website for Automation Engineers']")
+    public WebElement automationEngineersTitle;
+
+
     // TC 22
 
     @FindBy(xpath = "//*[@class='recommended_items']")
@@ -447,6 +457,7 @@ public class AutomationPage {
     public List<WebElement> billingAddress;
     @FindBy(css = "form>div[class=clearfix]>div")
     public List<WebElement> genderList1;
+
 
 
 }
