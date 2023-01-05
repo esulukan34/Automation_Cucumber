@@ -415,4 +415,42 @@ public class AutomationPage {
     public WebElement thankYouForYourReview;
 
 
+    // TC 22
+
+    @FindBy (xpath = "//*[@class='recommended_items']")
+    public WebElement recommendedItems22;
+
+     //@FindBy (xpath = "//*[@id='cartModal']")
+    //public WebElement cartModal22;
+
+    @FindBy (xpath = "//div[@class='recommended_items']//div[@class='col-sm-4']/div/div/div/a/i)[1]")
+    public WebElement addChart22;
+
+    @FindBy (css = ".carousel-inner>div>.col-sm-4>div>div>div>a")
+    public List<WebElement> addChart22List;
+
+    @FindBy (xpath = "//div[@class='recommended_items']//div[@class='col-sm-4']/div/div/div/p")
+    public List<WebElement> addChartItemsNameList;
+
+    @FindBy (xpath = "//a[@href='/view_cart']/u")
+    public WebElement viewCart22;
+
+    @FindBy (xpath = "//tr/td/h4/a")
+    public WebElement viewChartItem;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
