@@ -5,7 +5,7 @@ import org.junit.Assert;
 import pages.AutomationPage;
 import utilities.ReusableMethods;
 
-public class TC22_AddtoChartRecommendedItems {
+public class T22_AddtoChartRecommendedItems {
 
     AutomationPage page = new AutomationPage();
 
