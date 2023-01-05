@@ -416,6 +416,17 @@ public class AutomationPage {
     public WebElement thankYouForYourReview;
 
 
+
+    //TC25
+
+
+    @FindBy(css = "#scrollUp")
+    public WebElement scrollUp;
+
+    @FindBy(xpath = "//h2[.='Full-Fledged practice website for Automation Engineers']")
+    public WebElement automationEngineersTitle;
+
+
     // TC 22
 
     @FindBy(xpath = "//*[@class='recommended_items']")
@@ -448,5 +459,20 @@ public class AutomationPage {
     @FindBy(css = "form>div[class=clearfix]>div")
     public List<WebElement> genderList1;
 
+    //TC026
+    @FindBy(css = ".single-widget")
+    public WebElement singleWidget;
+
+    @FindBy(xpath = "//*[.='Subscription']")
+    public WebElement getSubscriptionTitle;
+
+    @FindBy(css = ".logo.pull-left")
+    public WebElement websiteAutomationEngineers;
+
+    @FindBy(xpath = "(//*[.='Full-Fledged practice website for Automation Engineers'])[1]")
+    public List<WebElement> websiteAutomationEngineersMessage;
+
+    @FindBy(css = ".fa.fa-angle-up")
+    public WebElement scrollUpp;
 
 }
