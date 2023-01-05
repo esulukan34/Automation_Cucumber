@@ -10,6 +10,7 @@ import org.openqa.selenium.TakesScreenshot;
 import pages.AutomationPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import static utilities.ReusableMethods.*;
 import static utilities.ReusableMethods.selectDdmIndex;
@@ -31,6 +32,20 @@ public class Hooks {
     AutomationPage page = new AutomationPage();
     static String email;
     static String password;
+    static String name;
+    static String company;
+    static String phoneNumber;
+    static String firstname;
+    static String lastname;
+    static String address1;
+    static String address2;
+    static String state;
+    static String city;
+    static String zipCode;
+    static String gender;
+    static String country;
+
+
 
     @Before(order = 1, value = "@Test02")
     public void registerUser() {
@@ -75,5 +90,58 @@ public class Hooks {
         jsScrollClick(page.createAccountButton);
 
         Driver.closeDriver();
+    }
+
+    public void register() {
+        name = Faker.instance().name().name();
+        company = Faker.instance().company().name();
+        phoneNumber = Faker.instance().phoneNumber().cellPhone();
+        firstname = Faker.instance().name().firstName();
+        lastname = Faker.instance().name().lastName();
+        address1 = Faker.instance().address().streetAddress();
+        address2 = Faker.instance().address().streetAddress();
+        state = Faker.instance().address().state();
+        city = Faker.instance().address().city();
+        zipCode = Faker.instance().address().zipCode();
+
+        page.userName.sendKeys(name);
+        page.emailBoxSignup.sendKeys(Faker.instance().internet().emailAddress());
+        page.signUp2.click();
+
+        int genderIndex = random().nextInt(page.genderList1.size());
+        page.genderList1.get(genderIndex).click();
+        gender = page.genderList1.get(genderIndex).getText();
+
+        page.passwordBoxNewSignup.sendKeys(Faker.instance().internet().password());
+
+        selectDropDown(page.dayDDM);
+        selectDropDown(page.monthDDM);
+        selectDropDown(page.yearDDM);
+        jsScrollClick(page.newslatter);
+        jsScrollClick(page.partners);
+
+        jsScroll(page.firstnameBoxNewSignup);
+        waitFor(2);
+        getActions().click(page.firstnameBoxNewSignup)
+                .sendKeys(firstname).sendKeys(Keys.TAB)
+                .sendKeys(lastname).sendKeys(Keys.TAB)
+                .sendKeys(company).sendKeys(Keys.TAB)
+                .sendKeys(address1).sendKeys(Keys.TAB)
+                .sendKeys(address2).sendKeys(Keys.TAB).perform();
+
+        selectDdmIndex(page.country);
+        jsScroll(page.country);
+        country = select(page.country).getFirstSelectedOption().getText();
+        waitFor(2);
+
+        getActions()
+                .click(page.state)
+                .sendKeys(state).sendKeys(Keys.TAB)
+                .sendKeys(city).sendKeys(Keys.TAB)
+                .sendKeys(zipCode).sendKeys(Keys.TAB)
+                .sendKeys(phoneNumber)
+                .perform();
+        jsScrollClick(page.createAccountButton);
+
     }
 }
