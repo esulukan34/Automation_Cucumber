@@ -16,6 +16,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.function.Function;
 
+import static utilities.Driver.getDriver;
+
 public class ReusableMethods {
 
     static Faker faker;
@@ -39,7 +41,7 @@ public class ReusableMethods {
     }
 
     public static Actions getActions() { //getActions method
-        return actions = new Actions(Driver.getDriver());
+        return actions = new Actions(getDriver());
     }
 
     public static Select select(WebElement ddm){ //select method
@@ -50,7 +52,7 @@ public class ReusableMethods {
         // naming the screenshot with the current date to avoid duplication
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         // TakesScreenshot is an interface of selenium that takes the screenshot
-        TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+        TakesScreenshot ts = (TakesScreenshot) getDriver();
         File source = ts.getScreenshotAs(OutputType.FILE);
         // full path to the screenshot location
         String target = System.getProperty("user.dir") + "/target/Screenshots/" + name + date + ".png";
@@ -61,18 +63,18 @@ public class ReusableMethods {
     }
     //========Switching Window=====//
     public static void switchToWindow(String targetTitle) {
-        String origin = Driver.getDriver().getWindowHandle();
-        for (String handle : Driver.getDriver().getWindowHandles()) {
-            Driver.getDriver().switchTo().window(handle);
-            if (Driver.getDriver().getTitle().equals(targetTitle)) {
+        String origin = getDriver().getWindowHandle();
+        for (String handle : getDriver().getWindowHandles()) {
+            getDriver().switchTo().window(handle);
+            if (getDriver().getTitle().equals(targetTitle)) {
                 return;
             }
         }
-        Driver.getDriver().switchTo().window(origin);
+        getDriver().switchTo().window(origin);
     }
     //========Hover Over=====//
     public static void hover(WebElement element) {
-        Actions actions = new Actions(Driver.getDriver());
+        Actions actions = new Actions(getDriver());
         actions.moveToElement(element).perform();
     }
     //==========Return a list of string given a list of Web Element====////
@@ -87,7 +89,7 @@ public class ReusableMethods {
     }
     //========Returns the Text of the element given an element locator==//
     public static List<String> getElementsText(By locator) {
-        List<WebElement> elems = Driver.getDriver().findElements(locator);
+        List<WebElement> elems = getDriver().findElements(locator);
         List<String> elemTexts = new ArrayList<>();
         for (WebElement el : elems) {
             if (!el.getText().isEmpty()) {
@@ -107,19 +109,19 @@ public class ReusableMethods {
     }
     //===============Explicit Wait==============//
     public static WebElement waitForVisibility(WebElement element, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
     public static WebElement waitForVisibility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
     public static WebElement waitForClickablility(WebElement element, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
     public static WebElement waitForClickablility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
     public static void clickWithTimeOut(WebElement element, int timeout) {
@@ -140,7 +142,7 @@ public class ReusableMethods {
         };
         try {
             System.out.println("Waiting for page to load...");
-            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+            WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
             wait.until(expectation);
         } catch (Throwable error) {
             System.out.println(
@@ -150,7 +152,7 @@ public class ReusableMethods {
     //======Fluent Wait====//
     public static WebElement fluentWait(final WebElement webElement, int timeout) {
         //FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver()).withTimeout(timeinsec, TimeUnit.SECONDS).pollingEvery(timeinsec, TimeUnit.SECONDS);
-        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver())
+        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
                 .withTimeout(Duration.ofSeconds(3))//Wait 3 second each time
                 .pollingEvery(Duration.ofSeconds(1));//Check for the element every 1 second
         WebElement element = wait.until(new Function<WebDriver, WebElement>() {
@@ -163,7 +165,7 @@ public class ReusableMethods {
 
     //====== JS Scroll Click ====//
     public static void jsScrollClick(WebElement webElement) {
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
         try {
             webElement.click();
         } catch (Exception e) {
@@ -176,7 +178,7 @@ public class ReusableMethods {
     //====== JS Scroll ====//
     public static void jsScroll(WebElement webElement) {
 
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);", webElement);
     }
     //========ScreenShot Web Element(Bir webelementin resmini alma)=====//
@@ -194,20 +196,20 @@ public class ReusableMethods {
 
     //====== js ======//
     public static void jsclick(WebElement webElement){
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("arguments[0].click();", webElement);
         try {
             webElement.click();
         } catch (Exception e) {
-            JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
+            JavascriptExecutor executor = (JavascriptExecutor) getDriver();
             executor.executeScript("arguments[0].click();", webElement);
         }
     }
 
     public static void bulveTikla(WebElement webElement) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(webElement));
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", webElement);
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", webElement);
     }
     public static Random random() { // Feyza
 
@@ -216,7 +218,7 @@ public class ReusableMethods {
     }
 
     public static WebElement waitForClickable(WebElement element, int timeout) {  // Feyza
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
     public static String Tarih(){
@@ -310,5 +312,12 @@ public class ReusableMethods {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy");
         return year = localDateTime.format(formatter);
 
+    }
+
+
+    public static void visibilityOfWait(WebElement webElement) {
+
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 }
