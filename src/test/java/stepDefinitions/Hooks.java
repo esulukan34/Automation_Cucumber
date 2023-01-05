@@ -10,7 +10,6 @@ import org.openqa.selenium.TakesScreenshot;
 import pages.AutomationPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 import static utilities.ReusableMethods.*;
 import static utilities.ReusableMethods.selectDdmIndex;
@@ -41,10 +40,9 @@ public class Hooks {
     static String address2;
     static String state;
     static String city;
-    static String zipCode;
-    static String gender;
+    static String zipcode;
     static String country;
-
+    static String gender;
 
 
     @Before(order = 1, value = "@Test02")
@@ -93,6 +91,7 @@ public class Hooks {
     }
 
     public void register() {
+
         name = Faker.instance().name().name();
         company = Faker.instance().company().name();
         phoneNumber = Faker.instance().phoneNumber().cellPhone();
@@ -102,27 +101,29 @@ public class Hooks {
         address2 = Faker.instance().address().streetAddress();
         state = Faker.instance().address().state();
         city = Faker.instance().address().city();
-        zipCode = Faker.instance().address().zipCode();
+        zipcode = Faker.instance().address().zipCode();
 
-        page.userName.sendKeys(name);
+        page.nameBoxSignup.sendKeys(name);
         page.emailBoxSignup.sendKeys(Faker.instance().internet().emailAddress());
-        page.signUp2.click();
+        page.signupButton.click();
 
-        int genderIndex = random().nextInt(page.genderList1.size());
-        page.genderList1.get(genderIndex).click();
-        gender = page.genderList1.get(genderIndex).getText();
+        int genderIndex = random().nextInt(page.genderList.size());
+        page.genderList.get(genderIndex).click();
+        gender = page.genderList.get(genderIndex).getText();
+
 
         page.passwordBoxNewSignup.sendKeys(Faker.instance().internet().password());
 
         selectDropDown(page.dayDDM);
         selectDropDown(page.monthDDM);
         selectDropDown(page.yearDDM);
-        jsScrollClick(page.newslatter);
+        jsScrollClick(page.newsletter);
         jsScrollClick(page.partners);
 
         jsScroll(page.firstnameBoxNewSignup);
-        waitFor(2);
-        getActions().click(page.firstnameBoxNewSignup)
+        waitFor(1);
+        getActions()
+                .click(page.firstnameBoxNewSignup)
                 .sendKeys(firstname).sendKeys(Keys.TAB)
                 .sendKeys(lastname).sendKeys(Keys.TAB)
                 .sendKeys(company).sendKeys(Keys.TAB)
@@ -132,13 +133,13 @@ public class Hooks {
         selectDdmIndex(page.country);
         jsScroll(page.country);
         country = select(page.country).getFirstSelectedOption().getText();
-        waitFor(2);
+        waitFor(1);
 
         getActions()
                 .click(page.state)
                 .sendKeys(state).sendKeys(Keys.TAB)
                 .sendKeys(city).sendKeys(Keys.TAB)
-                .sendKeys(zipCode).sendKeys(Keys.TAB)
+                .sendKeys(zipcode).sendKeys(Keys.TAB)
                 .sendKeys(phoneNumber)
                 .perform();
         jsScrollClick(page.createAccountButton);
