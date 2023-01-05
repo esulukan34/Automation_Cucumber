@@ -26,7 +26,7 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", "screenshots");
         }
 
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
 
     AutomationPage page = new AutomationPage();

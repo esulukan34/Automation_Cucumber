@@ -416,6 +416,7 @@ public class AutomationPage {
     public WebElement thankYouForYourReview;
 
 
+
     // TC 22
 
     @FindBy(xpath = "//*[@class='recommended_items']")
@@ -448,5 +449,9 @@ public class AutomationPage {
     @FindBy(css = "form>div[class=clearfix]>div")
     public List<WebElement> genderList1;
 
+
+    //TC24
+    @FindBy(css = ".btn.btn-default.check_out")
+    public WebElement downloadInvoice;
 
 }
