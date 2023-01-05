@@ -415,4 +415,50 @@ public class AutomationPage {
     public WebElement thankYouForYourReview;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //TC25
+
+
+    @FindBy(css = "#scrollUp")
+    public WebElement scrollUp;
+
+    @FindBy(xpath = "//h2[.='Full-Fledged practice website for Automation Engineers']")
+    public WebElement automationEngineersTitle;
+
 }
