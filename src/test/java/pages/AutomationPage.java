@@ -69,7 +69,7 @@ public class AutomationPage {
     @FindBy(css = ".btn.btn-primary")
     public WebElement continueButton;
 
-    @FindBy(xpath = "//*[text()=' Logged in as ']")
+    @FindBy(css = "a>.fa.fa-user")
     public WebElement logged;
 
     @FindBy(xpath = "//*[text()=' Delete Account']")
@@ -294,8 +294,8 @@ public class AutomationPage {
     @FindBy(xpath = "//tr[1]/td[4]/button")
     public WebElement quantityInCart;
 
-    @FindBy(xpath = "(//a[text()='Add to cart'])[1]")
-    public WebElement firstProductAddToCart;
+    @FindBy(xpath = "//div[@class='single-products']//*[@class='productinfo text-center']/a")
+    public List<WebElement> firstProductAddToCart;
 
     @FindBy(xpath = "//*[text()='Continue Shopping']")
     public WebElement continueShoppingButton;

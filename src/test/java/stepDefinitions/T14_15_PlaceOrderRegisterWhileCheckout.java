@@ -19,7 +19,7 @@ public class T14_15_PlaceOrderRegisterWhileCheckout {
     public void kullaniciSepeteUrunEkler() {
 
         try {
-            ReusableMethods.jsScrollClick(page.firstProductAddToCart);
+            ReusableMethods.jsScrollClick(page.firstProductAddToCart.get(0));
 
         } catch (Exception e) {
 
@@ -132,7 +132,7 @@ public class T14_15_PlaceOrderRegisterWhileCheckout {
     @And("Kullanici Logged in as username gorunurlugunu dogrular")
     public void kullaniciLoggedInAsUsernameGorunurlugunuDogrular() {
 
-        page.logged.isDisplayed();
+        Assert.assertTrue(page.logged.isDisplayed());
     }
 
 
