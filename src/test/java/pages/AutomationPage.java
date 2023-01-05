@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -417,40 +418,35 @@ public class AutomationPage {
 
     // TC 22
 
-    @FindBy (xpath = "//*[@class='recommended_items']")
+    @FindBy(xpath = "//*[@class='recommended_items']")
     public WebElement recommendedItems22;
 
-     //@FindBy (xpath = "//*[@id='cartModal']")
+    //@FindBy (xpath = "//*[@id='cartModal']")
     //public WebElement cartModal22;
 
-    @FindBy (xpath = "//div[@class='recommended_items']//div[@class='col-sm-4']/div/div/div/a/i)[1]")
+    @FindBy(xpath = "//div[@class='recommended_items']//div[@class='col-sm-4']/div/div/div/a/i)[1]")
     public WebElement addChart22;
 
-    @FindBy (css = ".carousel-inner>div>.col-sm-4>div>div>div>a")
+    @FindBy(css = ".carousel-inner>div>.col-sm-4>div>div>div>a")
     public List<WebElement> addChart22List;
 
-    @FindBy (xpath = "//div[@class='recommended_items']//div[@class='col-sm-4']/div/div/div/p")
+    @FindBy(xpath = "//div[@class='recommended_items']//div[@class='col-sm-4']/div/div/div/p")
     public List<WebElement> addChartItemsNameList;
 
-    @FindBy (xpath = "//a[@href='/view_cart']/u")
+    @FindBy(xpath = "//a[@href='/view_cart']/u")
     public WebElement viewCart22;
 
-    @FindBy (xpath = "//tr/td/h4/a")
+    @FindBy(xpath = "//tr/td/h4/a")
     public WebElement viewChartItem;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    //TC23
+    @FindBy(css = "#address_delivery>li")
+    public List<WebElement> deliveryAddress;
+    @FindBy(css = "#address_invoice>li")
+    public List<WebElement> billingAddress;
+    @FindBy(css = "form>div[class=clearfix]>div")
+    public List<WebElement> genderList1;
 
 
 }
